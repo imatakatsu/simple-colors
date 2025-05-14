@@ -21,6 +21,11 @@ func Rgb(r, g, b uint8) Color {
 	return Color{R: r, G: g, B: b}
 }
 
+// just color string in one rgb color
+func Color(text string, color Color) string {
+	return fmt.Sprintf("\x1b[38;2;%d;%d;%dm%s\x1b[0m", color.R, color.G, color.B, text)
+}
+
 // create gradient, flexmode = true enable smooth, flexmode = false disable it. text - text, which will be colored. colors - some Rgb() colors
 func Gradient(flexMode bool, text string, colors ...Color) string {
 	if len(text) == 0 || len(colors) == 0 {
