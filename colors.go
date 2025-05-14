@@ -72,7 +72,7 @@ func Gradient(flexMode bool, text string, colors ...Color) string {
 		}
 	}
 
-	return builder.String()
+	return builder.String()+"\x1b[0m"
 }
 
 func (c Color) wrap(text string) string {
