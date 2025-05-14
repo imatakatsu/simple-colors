@@ -22,7 +22,7 @@ func Rgb(r, g, b uint8) Color {
 }
 
 // just color string in one rgb color
-func Color(text string, color Color) string {
+func Paint(text string, color Color) string {
 	return fmt.Sprintf("\x1b[38;2;%d;%d;%dm%s\x1b[0m", color.R, color.G, color.B, text)
 }
 
